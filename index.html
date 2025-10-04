@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripPlanner - Your Travel Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-plane"></i>
+                <h1>TripPlanner</h1>
+            </div>
+            <p class="tagline">Discover your next adventure</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <h2>Where would you like to go?</h2>
+                    <div class="search-bar">
+                        <input type="text" id="destinationInput"
+                            placeholder="Enter destination (e.g., Paris, Tokyo, New York)" autocomplete="off">
+                        <button id="searchBtn" class="search-btn">
+                            <i class="fas fa-search"></i>
+                            Search
+                        </button>
+                    </div>
+                    <div class="search-suggestions">
+                        <span class="suggestion">Try: Paris, Tokyo, London, Rome, Barcelona</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Searching for your destination...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" class="error hidden">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Oops! Something went wrong</h3>
+                <p id="errorMessage">We couldn't find information for that destination.</p>
+                <button id="retryBtn" class="retry-btn">Try Again</button>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results hidden">
+                <!-- Destination Info -->
+                <section class="destination-info">
+                    <h2 id="destinationName">Destination Name</h2>
+                    <p id="destinationDescription" class="destination-description">
+                        Discover the beauty and culture of this amazing destination.
+                    </p>
+                </section>
+
+                <!-- Weather Section -->
+                <section class="weather-section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-cloud-sun"></i> Current Weather</h3>
+                    </div>
+                    <div class="weather-card">
+                        <div class="weather-main">
+                            <div class="weather-icon">
+                                <img id="weatherIcon" src="" alt="Weather icon">
+                            </div>
+                            <div class="weather-temp">
+                                <span id="temperature">--°C</span>
+                                <span id="weatherCondition">--</span>
+                            </div>
+                        </div>
+                        <div class="weather-details">
+                            <div class="weather-detail">
+                                <i class="fas fa-tint"></i>
+                                <span>Humidity</span>
+                                <span id="humidity">--%</span>
+                            </div>
+                            <div class="weather-detail">
+                                <i class="fas fa-wind"></i>
+                                <span>Wind</span>
+                                <span id="windSpeed">-- m/s</span>
+                            </div>
+                            <div class="weather-detail">
+                                <i class="fas fa-eye"></i>
+                                <span>Visibility</span>
+                                <span id="visibility">-- km</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Photo Gallery Section -->
+                <section class="gallery-section">
+                    <div class="section-header">
+                        <h3><i class="fas fa-images"></i> Photo Gallery</h3>
+                    </div>
+                    <div id="photoGallery" class="photo-gallery">
+                        <!-- Photos will be dynamically loaded here -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Welcome State -->
+            <div id="welcomeState" class="welcome">
+                <div class="welcome-content">
+                    <i class="fas fa-globe-americas"></i>
+                    <h2>Ready to explore the world?</h2>
+                    <p>Search for any destination to see photos, weather, and plan your perfect trip!</p>
+                    <div class="feature-highlights">
+                        <div class="feature">
+                            <i class="fas fa-camera"></i>
+                            <span>Beautiful Photos</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-thermometer-half"></i>
+                            <span>Live Weather</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile Friendly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 TripPlanner. Made with ❤️ for travelers.</p>
+            <p class="api-credit">
+                Powered by <a href="https://unsplash.com" target="_blank">Unsplash</a> and
+                <a href="https://openweathermap.org" target="_blank">OpenWeatherMap</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Load configuration files -->
+    <script src="config.js"></script>
+    <script src="config.local.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
